@@ -1,130 +1,123 @@
-HR Analytics README & Dataset Documentation
-Created By
-Rupesh Kumar
-Project Overview
-The HR Analytics Dashboard Project is an enterprise-level analytics project developed using Python, PostgreSQL, SQL, and Power BI. The project analyzes employee attrition, workforce demographics, employee satisfaction, compensation, and HR performance trends.
-Technologies Used
-• Python
-• Jupyter Notebook
-• PostgreSQL
-• pgAdmin 4
-• SQL
-• Power BI
-• Excel
-Dataset Summary
-Dataset Name: HR Analytics Dataset
-Dataset Type: Employee HR Dataset
-Total Rows: 1470
-Total Columns: 39
-Dataset Columns
-Attrition
-Business Travel
-CF_age band
-CF_attrition label
-Department
-Education Field
-emp no
-Employee Number
-Gender
-Job Role
-Marital Status
-Over Time
-Over18
-Training Times Last Year
-Age
-CF_current Employee
-Daily Rate
-Distance From Home
-Education
-Employee Count
-Environment Satisfaction
-Hourly Rate
-Job Involvement
-Job Level
-Job Satisfaction
-Monthly Income
-Monthly Rate
-Num Companies Worked
-Percent Salary Hike
-Performance Rating
-Relationship Satisfaction
-Standard Hours
-Stock Option Level
-Total Working Years
-Work Life Balance
-Years At Company
-Years In Current Role
-Years Since Last Promotion
-Years With Curr Manager
-Jupyter Notebook Code
-Load Excel File:
+# 📊 HR Analytics Dashboard
 
-import pandas as pd
-df = pd.read_excel('HR_Data.xlsx')
+<div align="center">
 
-Get Total Rows and Columns:
-print(df.shape)
+### Transforming HR Data into Actionable Business Insights
 
-Get Total Rows:
-print(df.shape[0])
+Enterprise-level HR Analytics solution built with **Python, PostgreSQL, SQL, and Power BI** to analyze employee attrition, workforce demographics, employee satisfaction, compensation trends, and performance metrics.
 
-Get Total Columns:
-print(df.shape[1])
+![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+![Python](https://img.shields.io/badge/Python-Analysis-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-Queries-CC2927?style=for-the-badge)
+![Excel](https://img.shields.io/badge/Excel-Data%20Source-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
 
-Get Column Names:
-for col in df.columns:
-    print(col)
+</div>
 
-Dataset Information:
-print(df.info())
+---
 
-Check Missing Values:
-print(df.isnull().sum())
+## 📖 Project Overview
 
-Check Duplicate Rows:
-print(df.duplicated().sum())
-PostgreSQL SQL Commands
-Total Rows:
-SELECT COUNT(*) AS total_rows FROM customer;
+Human Resource departments generate vast amounts of employee data, but deriving meaningful insights from this information can be challenging. This project leverages modern analytics tools to transform raw HR data into interactive dashboards that help organizations understand workforce behavior, identify attrition drivers, and support data-driven decision-making.
 
-Total Columns:
-SELECT COUNT(*) AS total_columns FROM information_schema.columns WHERE table_name='customer';
+The dashboard provides a comprehensive analysis of employee demographics, attrition patterns, job satisfaction, compensation structures, and workforce performance indicators.
 
-Show Column Names:
-SELECT column_name FROM information_schema.columns WHERE table_name='customer';
+---
 
-View First 5 Rows:
-SELECT * FROM customer LIMIT 5;
+## 🎯 Project Objectives
 
-View Table Structure:
-SELECT column_name, data_type FROM information_schema.columns WHERE table_name='customer';
-Power BI Dashboard Pages
-Page 1 - Executive Summary
-Page 2 - Employee Demographics
-Page 3 - Attrition Analysis
-Page 4 - Employee Performance & Satisfaction
-Page 5 - Compensation & Benefits
-Key KPIs
-• Total Employees
-• Attrition Count
-• Attrition Rate
-• Active Employees
-• Average Salary
-• Job Satisfaction
-• Work Life Balance
-DAX Measures
-CountEmployee = COUNTROWS('public customer')
+- Analyze employee attrition and retention trends
+- Identify departments and job roles with high turnover
+- Evaluate employee satisfaction and work-life balance
+- Monitor workforce demographics and diversity
+- Examine compensation and salary distribution patterns
+- Support HR leaders with actionable business insights
 
-Attrition Count = CALCULATE(COUNTROWS('public customer'),'public customer'[Attrition] = "Yes")
+---
 
-Attrition Rate = DIVIDE([Attrition Count],[CountEmployee]) * 100
+## 🛠️ Technology Stack
 
-Active Employee = [CountEmployee] - [Attrition Count]
-Business Insights
-• Sales department has the highest attrition.
-• Overtime employees are more likely to leave.
-• Salary impacts employee retention.
-• Younger employees show higher turnover.
-• Job satisfaction affects retention.
-Conclusion
-The HR Analytics Dashboard Project successfully converts raw HR employee data into meaningful business insights using enterprise-level 
+| Technology | Purpose |
+|------------|----------|
+| Python | Data Cleaning & Analysis |
+| Pandas | Data Manipulation |
+| Jupyter Notebook | Exploratory Data Analysis |
+| PostgreSQL | Data Storage |
+| SQL | Data Querying |
+| Power BI | Interactive Dashboard Development |
+| Excel | Data Source |
+
+---
+
+## 📂 Dataset Information
+
+### Dataset Summary
+
+| Metric | Value |
+|---------|---------|
+| Dataset Type | HR Employee Analytics |
+| Total Records | 1,470 |
+| Total Features | 39 |
+| Data Source | Excel Dataset |
+
+### Key Dataset Attributes
+
+#### Employee Information
+- Employee Number
+- Gender
+- Age
+- Marital Status
+- Education
+- Education Field
+
+#### Employment Details
+- Department
+- Job Role
+- Job Level
+- Business Travel
+- OverTime
+- Total Working Years
+
+#### Compensation Metrics
+- Monthly Income
+- Daily Rate
+- Hourly Rate
+- Monthly Rate
+- Percent Salary Hike
+- Stock Option Level
+
+#### Satisfaction Metrics
+- Job Satisfaction
+- Environment Satisfaction
+- Relationship Satisfaction
+- Work Life Balance
+- Job Involvement
+
+#### Attrition Indicators
+- Attrition
+- Attrition Label
+- Years At Company
+- Years Since Last Promotion
+- Years With Current Manager
+
+---
+
+## 🔄 Project Workflow
+
+```text
+Excel Dataset
+      │
+      ▼
+Data Cleaning & Validation (Python)
+      │
+      ▼
+PostgreSQL Database
+      │
+      ▼
+SQL Analysis
+      │
+      ▼
+Power BI Dashboard
+      │
+      ▼
+Business Insights & Reporting
